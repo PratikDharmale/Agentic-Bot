@@ -25,7 +25,9 @@ class LoadStreamlitUI:
                 # Model selection
                 model_options = self.config.get_groq_model_options()
                 self.user_controls["selected_groq_model"] = st.selectbox("Select Model", model_options)
-                self.user_controls["GROQ_API_KEY"] = st.session_state["GROQ_API_KEY"]=st.text_input("API Key",type="password")
+                self.user_controls["GROQ_API_KEY"] = st.session_state["GROQ_API_KEY"] = st.text_input("API Key", type="password")
+                # Allow entering a custom model string (useful when config options are outdated)
+                self.user_controls["custom_groq_model"] = st.text_input("Custom model (optional)")
                 # Validate API key
                 if not self.user_controls["GROQ_API_KEY"]:
                     st.warning("⚠️ Please enter your GROQ API key to proceed. Don't have? refer : https://console.groq.com/keys ")

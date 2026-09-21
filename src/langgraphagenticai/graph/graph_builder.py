@@ -19,7 +19,7 @@ class GraphBuilder:
 
         self.basic_chatbot_node=BasicChatbotNode(self.llm)
 
-        self.graph_builder.add_node("chatbot",self.basic_chatbot_node.process)
+        self.graph_builder.add_node("chatbot",self.basic_chatbot_node.process) # node functionlity write in node
         self.graph_builder.add_edge(START,"chatbot")
         self.graph_builder.add_edge("chatbot",END)
 
